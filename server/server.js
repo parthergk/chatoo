@@ -7,7 +7,7 @@ const httpServer = http.createServer(app);
 
 const io = socketIo(httpServer, {
     cors: {
-        origin: "https://chatoo-ten.vercel.app"
+        origin: "https://chatoo-ten.vercel.app/"
     }
 });
 
