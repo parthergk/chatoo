@@ -4,7 +4,7 @@ import { useSelector} from 'react-redux';
 import io from 'socket.io-client';
 import 'tailwindcss/tailwind.css';
 
-const socket = io.connect("https://chatoo-server.vercel.app");
+const socket = io.connect("https://chatoo-eovs.onrender.com/");
 
 function App() {
   const [message, setMessage] = useState('');
