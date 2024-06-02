@@ -1,15 +1,20 @@
 const express = require("express");
 const http = require('http');
 const socketIo = require("socket.io");
+const cors = require('cors');
 
 const app = express();
 const httpServer = http.createServer(app);
 
+const port = process.env.PORT || 5000;
+
 const io = socketIo(httpServer, {
     cors: {
-        origin: "http://localhost:3000"
+        origin: "*"
     }
 });
+
+app.use(cors());
 
 io.on("connection", (socket) => {
     console.log("Socket is active to be connected");
@@ -31,6 +36,6 @@ io.on("connection", (socket) => {
     });
 });
 
-httpServer.listen(5000, () => {
-    console.log("Server is running on http://localhost:5000");
+httpServer.listen(port, () => {
+    console.log(`Server is running on ${port}` );
 });
