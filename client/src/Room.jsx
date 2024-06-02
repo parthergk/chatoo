@@ -53,7 +53,7 @@ const Room = ({socket}) => {
       >
         Join
       </button>
-      <span className=' text-xs md:text-lg'>{msg}</span>
+      <span className=' text-xs md:text-lg mt-2 text-center'>{msg}</span>
     </div>
   );
 };
