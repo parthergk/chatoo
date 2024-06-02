@@ -30,9 +30,9 @@ const Room = ({socket}) => {
   }, [socket]);
 
   return (
-    <div className='fixed left-0 flex flex-col bg-gray-700 p-5'>
+    <div className='fixed left-0 flex flex-col bg-gray-700 p-3 md:p-5 w-1/2 md:w-60'>
       <input
-        className='px-2 rounded bg-gray-500 text-white'
+        className='px-2 rounded bg-gray-500 text-white text-sm md:text-lg'
         placeholder='User Name'
         type="text"
         value={user}
@@ -40,7 +40,7 @@ const Room = ({socket}) => {
       />
       
       <input
-        className='my-4 px-2 rounded bg-gray-500 text-white'
+        className='my-3 px-1 rounded bg-gray-500 text-white text-sm md:text-lg'
         placeholder='Room Name'
         type="text"
         value={room}
@@ -48,12 +48,12 @@ const Room = ({socket}) => {
       />
       
       <button
-        className='bg-slate-900 rounded hover:bg-slate-800 py-1 text-white'
+        className='bg-slate-900 rounded hover:bg-slate-800 md:py-1 text-white'
         onClick={handleJoinRoom}
       >
         Join
       </button>
-      <span>{msg}</span>
+      <span className=' text-xs md:text-lg'>{msg}</span>
     </div>
   );
 };
