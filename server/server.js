@@ -2,7 +2,6 @@ const express = require("express");
 const http = require('http');
 const socketIo = require("socket.io");
 const cors = require('cors');
-const cors = require('cors');
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -18,7 +17,7 @@ const io = socketIo(httpServer, {
 app.use(cors());
 
 io.on("connection", (socket) => {
-    console.log("Socket is active to be connected");
+    console.log("Socket is active and connected");
 
     socket.on("join_room", (data) => {
         const { user, room } = data;
@@ -28,15 +27,15 @@ io.on("connection", (socket) => {
     });
 
     socket.on("chat", (message) => {
-        const { room, content, user } = message;
-        io.in(room).emit("chat", { user, content });
+        const { room, content, user, replyTo } = message; // Added replyTo in destructure
+        io.in(room).emit("chat", { user, content, replyTo: replyTo || null }); // Emit replyTo if exists
     });
 
     socket.on('disconnect', () => {
-        console.log('user disconnected');
+        console.log('User disconnected');
     });
 });
 
 httpServer.listen(port, () => {
-    console.log(`Server is running on ${port}` );
+    console.log(`Server is running on port ${port}`);
 });
