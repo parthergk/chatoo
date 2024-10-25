@@ -25,7 +25,6 @@ const Room = ({ socket }) => {
   }, [socket]);
 
   return (
-<<<<<<< HEAD
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
       <div className="space-y-4">
         <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
@@ -62,32 +61,6 @@ const Room = ({ socket }) => {
         </div>
         {msg && <p className="text-sm text-gray-600 mt-2">{msg}</p>}
       </div>
-=======
-    <div className='fixed left-0 flex flex-col bg-gray-700 p-3 md:p-5 w-1/2 md:w-60'>
-      <input
-        className='px-2 rounded bg-gray-500 text-white text-sm md:text-lg'
-        placeholder='User Name'
-        type="text"
-        value={user}
-        onChange={(e) => setUser(e.target.value)}
-      />
-      
-      <input
-        className='my-3 px-1 rounded bg-gray-500 text-white text-sm md:text-lg'
-        placeholder='Room Name'
-        type="text"
-        value={room}
-        onChange={(e) => setRoom(e.target.value)}
-      />
-      
-      <button
-        className='bg-slate-900 rounded hover:bg-slate-800 md:py-1 text-white'
-        onClick={handleJoinRoom}
-      >
-        Join
-      </button>
-      <span className=' text-xs md:text-lg mt-2 text-center'>{msg}</span>
->>>>>>> 325e5fda0d6b0d4857669310bd414809d84277f6
     </div>
   );
 };
