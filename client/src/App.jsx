@@ -6,7 +6,8 @@ import Room from "./Room";
 import { MessageCircle, Send, X, Reply } from "lucide-react";
 import Message from "./Message";
 
-const socket = io.connect("https://chatterroom.vercel.app");
+
+const socket = io.connect("https://chatoo-eovs.onrender.com/");
 
 function App() {
   const [message, setMessage] = useState("");
